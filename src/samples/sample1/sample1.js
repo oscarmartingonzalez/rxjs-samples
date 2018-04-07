@@ -27,7 +27,7 @@ Rx.Observable
                 DateOperators.lessThanEqual(new Date('2017-02-28'))
             )
             .reduce((acc, curr) => [...acc, curr], []),
-        // Getting April dates
+        // Getting April dates minus first and last date of month
         sub$
             .pipe(
                 DateOperators.greaterThan(new Date('2017-04-01')),
