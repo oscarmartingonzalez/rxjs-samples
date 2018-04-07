@@ -34,22 +34,24 @@ const getFullYearDates = (year) => {
 };
 const dates = getFullYearDates(2017);
 
-const sub1$ = Rx.Observable.from(dates)
-    .pipe(
-        DateOperators.greaterThanEqual(new Date('2017-02-01')),
-        DateOperators.lessThanEqual(new Date('2017-02-10'))
-    )
-    .reduce((acc, curr) => [...acc, curr], []);
-
-const sub2$ = Rx.Observable.from(dates)
-    .pipe(
-        DateOperators.greaterThan(new Date('2017-02-01')),
-        DateOperators.lessThan(new Date('2017-02-10'))
-    )
-    .reduce((acc, curr) => [...acc, curr], []);
-
+const sub$ = Rx.Observable.from(dates);
 Rx.Observable
-    .forkJoin(sub1$, sub2$)
+    .forkJoin(
+        // Getting February dates
+        sub$
+            .pipe(
+                DateOperators.greaterThanEqual(new Date('2017-02-01')),
+                DateOperators.lessThanEqual(new Date('2017-02-28'))
+            )
+            .reduce((acc, curr) => [...acc, curr], []),
+        // Getting April dates
+        sub$
+            .pipe(
+                DateOperators.greaterThan(new Date('2017-04-01')),
+                DateOperators.lessThan(new Date('2017-04-30'))
+            )
+            .reduce((acc, curr) => [...acc, curr], []),
+    )
     .subscribe(
         item => console.log(item),
         err => console.log(err),
