@@ -1,0 +1,38 @@
+{
+  "name": "rxjs-samples",
+  "version": "1.0.1",
+  "description": "Rxjs samples",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elmao79/rxjs-samples.git"
+  },
+  "keywords": [
+    "rxjs",
+    "javascript"
+  ],
+  "author": "OSCAR MARTIN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elmao79/rxjs-samples/issues"
+  },
+  "homepage": "https://github.com/elmao79/rxjs-samples#readme",
+  "dependencies": {
+    "rxjs": "^5.5.8"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-eslint": "^8.2.2",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-babel": "^5.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0"
+  }
+}
