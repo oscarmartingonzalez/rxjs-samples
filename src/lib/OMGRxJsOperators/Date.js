@@ -10,21 +10,21 @@ const parseDate = (targetDate) => {
 };
 
 exports.greaterThan = (targetDate) => {
-    let localTargetDate = parseDate(targetDate);
+    const localTargetDate = parseDate(targetDate);
     return Operators.filter(item => item > localTargetDate);
 };
 
 exports.greaterThanEqual = (targetDate) => {
-    let localTargetDate = parseDate(targetDate);
+    const localTargetDate = parseDate(targetDate);
     return Operators.filter(item => item >= localTargetDate);
 };
 
 exports.lessThan = (targetDate) => {
-    let localTargetDate = parseDate(targetDate);
+    const localTargetDate = parseDate(targetDate);
     return Operators.filter(item => item < localTargetDate);
 };
 
 exports.lessThanEqual = (targetDate) => {
-    let localTargetDate = parseDate(targetDate);
+    const localTargetDate = parseDate(targetDate);
     return Operators.filter(item => item <= localTargetDate);
 };
