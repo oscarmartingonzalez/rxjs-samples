@@ -1,6 +1,6 @@
 
 const Rx = require('rxjs/Rx');
-const DateOperators = require('../lib/OMGRxJsOperators/Date');
+const DateOperators = require('../../lib/OMGRxJsOperators/Date');
 
 const getSampleDatesArr = () => {
     let dates = [];

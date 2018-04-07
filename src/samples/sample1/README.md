@@ -1,9 +1,22 @@
 
 # RxJs sample of custom date filter operator
 
+## Lettable operators
+
+We use to filter dates some custom lettable operators defined as high-order functions. These operators are pure functions and are located in (https://github.com/elmao79/rxjs-samples/blob/master/src/lib/OMGRxJsOperators/Date.js).
+```js
+const Operators = require('rxjs/operators');
+
+exports.greaterThan = targetDate => Operators.filter(item => item > targetDate);
+exports.greaterThanEqual = targetDate => Operators.filter(item => item >= targetDate);
+exports.lessThan = targetDate => Operators.filter(item => item < targetDate);
+exports.lessThanEqual = targetDate => Operators.filter(item => item <= targetDate);
+```
+Rather than patch operators into `Observable.prototype`, lettable operators can be imported into the modules and re-used easily. Now, thanks to RxJS 5.5 observables have a pipe method that lets call our pure functions operators building a composition of operators.
+
 ```js
 const Rx = require('rxjs/Rx');
-const DateOperators = require('../lib/OMGRxJsOperators/Date');
+const DateOperators = require('../../lib/OMGRxJsOperators/Date');
 
 const getSampleDatesArr = () => {
     let dates = [];
