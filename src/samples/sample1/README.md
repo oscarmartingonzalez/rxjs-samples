@@ -3,7 +3,7 @@
 
 ## Lettable operators
 
-We use to filter dates some custom lettable operators defined as high-order functions. These operators are pure functions and are located in (https://github.com/elmao79/rxjs-samples/blob/master/src/lib/OMGRxJsOperators/Date.js).
+We use to filter dates some custom lettable operators defined as high-order functions. These operators are pure functions and are located in [lib/OMGRxJsOperators/Date.js](https://github.com/elmao79/rxjs-samples/blob/master/src/lib/OMGRxJsOperators/Date.js).
 ```js
 const Operators = require('rxjs/operators');
 
@@ -58,6 +58,7 @@ Rx.Observable
 ```sh
 node sample1.js
 ```
+Output
 ```none
 [ [ 2017-02-01T00:00:00.000Z,
     2017-02-02T00:00:00.000Z,
