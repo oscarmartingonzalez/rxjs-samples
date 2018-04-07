@@ -3,8 +3,9 @@
 
 ## Lettable operators
 
-I use to filter dates some custom lettable operators defined as pure high-order functions. These pure functions are side effect-free and can be used in function chains. It's important that the operators are side effect-free because an observable ecosystem begins with a subscription and ends with a disposal. Otherwise the observable is no longer stateless and the lifecycles of the state and the observable are dependent on each other. My custom sample operators are located in [lib/OMGRxJsOperators/Date.js](https://github.com/elmao79/rxjs-samples/blob/master/src/lib/OMGRxJsOperators/Date.js). See the benefits of lettable operators reading [this](https://github.com/ReactiveX/rxjs/blob/master/doc/pipeable-operators.md).
+I use to filter dates some custom lettable operators defined as pure high-order functions. These pure functions are side effect-free and can be used in function chains. It's important that the operators are side effect-free because an observable ecosystem begins with a subscription and ends with a disposal. Otherwise the observable is no longer stateless and the lifecycles of the state and the observable are dependent on each other. See the benefits of lettable operators reading [this](https://github.com/ReactiveX/rxjs/blob/master/doc/pipeable-operators.md).
 
+My custom sample operators are located in [lib/OMGRxJsOperators/Date.js](https://github.com/elmao79/rxjs-samples/blob/master/src/lib/OMGRxJsOperators/Date.js).
 ```js
 const Operators = require('rxjs/operators');
 
