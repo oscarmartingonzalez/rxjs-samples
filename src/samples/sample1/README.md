@@ -3,7 +3,8 @@
 
 ## Lettable operators
 
-I use to filter dates some custom lettable operators defined as high-order functions. These operators are pure functions and are located in [lib/OMGRxJsOperators/Date.js](https://github.com/elmao79/rxjs-samples/blob/master/src/lib/OMGRxJsOperators/Date.js). See the benefits of lettable operators reading [this article](https://blog.angularindepth.com/rxjs-understanding-lettable-operators-fe74dda186d3).
+I use to filter dates some custom lettable operators defined as high-order functions. These operators are pure functions and are located in [lib/OMGRxJsOperators/Date.js](https://github.com/elmao79/rxjs-samples/blob/master/src/lib/OMGRxJsOperators/Date.js). See the benefits of lettable operators reading [this](https://github.com/ReactiveX/rxjs/blob/master/doc/pipeable-operators.md).
+
 ```js
 const Operators = require('rxjs/operators');
 
