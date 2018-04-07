@@ -1,10 +1,30 @@
 
 const Operators = require('rxjs/operators');
 
-exports.greaterThan = targetDate => Operators.filter(item => item > targetDate);
+const parseDate = (targetDate) => {
+    if (targetDate instanceof Date) {
+        return targetDate;
+    }
 
-exports.greaterThanEqual = targetDate => Operators.filter(item => item >= targetDate);
+    return new Date(targetDate);
+};
 
-exports.lessThan = targetDate => Operators.filter(item => item < targetDate);
+exports.greaterThan = (targetDate) => {
+    let localTargetDate = parseDate(targetDate);
+    return Operators.filter(item => item > localTargetDate);
+};
 
-exports.lessThanEqual = targetDate => Operators.filter(item => item <= targetDate);
+exports.greaterThanEqual = (targetDate) => {
+    let localTargetDate = parseDate(targetDate);
+    return Operators.filter(item => item >= localTargetDate);
+};
+
+exports.lessThan = (targetDate) => {
+    let localTargetDate = parseDate(targetDate);
+    return Operators.filter(item => item < localTargetDate);
+};
+
+exports.lessThanEqual = (targetDate) => {
+    let localTargetDate = parseDate(targetDate);
+    return Operators.filter(item => item <= localTargetDate);
+};

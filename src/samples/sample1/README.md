@@ -40,15 +40,15 @@ Rx.Observable
         // Getting February dates
         sub$
             .pipe(
-                DateOperators.greaterThanEqual(new Date('2017-02-01')),
-                DateOperators.lessThanEqual(new Date('2017-02-28'))
+                DateOperators.greaterThanEqual('2017-02-01'),
+                DateOperators.lessThanEqual('2017-02-28')
             )
             .reduce((acc, curr) => [...acc, curr], []),
         // Getting April dates minus first and last date of month
         sub$
             .pipe(
-                DateOperators.greaterThan(new Date('2017-04-01')),
-                DateOperators.lessThan(new Date('2017-04-30'))
+                DateOperators.greaterThan('2017-04-01'),
+                DateOperators.lessThan('2017-04-30')
             )
             .reduce((acc, curr) => [...acc, curr], []),
     )
