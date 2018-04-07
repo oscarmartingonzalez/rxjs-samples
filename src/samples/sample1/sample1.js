@@ -2,19 +2,20 @@
 const Rx = require('rxjs/Rx');
 const DateOperators = require('../../lib/OMGRxJsOperators/Date');
 
-const getSampleDatesArr = () => {
+// I generate an array with a full year dates.
+const getFullYearDates = (year) => {
     let dates = [];
-    // We generate an array with a full year dates.
-    const fromDate = new Date('2017-01-01');
-    let currDate = new Date(+(fromDate) - 86400000);
-    for (let i = 0; i < 365; i += 1) {
+    const fromDate = new Date(`${year}-01-01`);
+    let currDate = new Date(fromDate);
+    dates.push(currDate);
+    for (let i = 0; i < 364; i += 1) {
         currDate = new Date(+(currDate) + 86400000);
         dates.push(currDate);
     }
 
     return dates;
 };
-const dates = getSampleDatesArr();
+const dates = getFullYearDates(2017);
 
 const sub1$ = Rx.Observable.from(dates)
     .pipe(
